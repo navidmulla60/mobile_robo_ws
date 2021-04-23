@@ -1,0 +1,8 @@
+
+<launch>
+
+    <include file="$(find navigation)/launch/amcl.launch">
+
+   </include>
+
+</launch>
