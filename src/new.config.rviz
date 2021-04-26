@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Path2
       Splitter Ratio: 0.5
     Tree Height: 416
   - Class: rviz/Selection
@@ -69,6 +68,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -206,7 +210,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: /map
+      Topic: /move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true

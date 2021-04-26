@@ -18,3 +18,5 @@ controller_patience: 0.02
 
 # local planner - default is trajectory rollout
 base_local_planner: "dwa_local_planner/DWAPlannerROS"
+
+dwa_local_planner's forward_point_distance: 0

@@ -1,15 +1,17 @@
 global_costmap:
-  update_frequency: 1.0
-  publish_frequency: 0.5
-  transform_tolerance: 10
-  width: 15
-  height: 15
-  origin_x: -7.5
-  origin_y: -7.5
+  update_frequency: 20
+  publish_frequency: 20
+  transform_tolerance: 1
+ 
   static_map: true
-  rolling_window: true
-  inflation_radius: 0.25
-  resolution: 0.01
 
+  inflation_layer: 0.2
+  inflation_radius: 0.2
+  resolution: 0.050000
+  occdist_scale:  0.01
+  
+
+  # plugins:
+  #   - {name: static_layer,        type: "costmap_2d::StaticLayer"}
  
 

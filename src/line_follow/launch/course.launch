@@ -1,0 +1,26 @@
+<launch>
+   <!--Robot Description from URDF-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kbot_description)/urdf/kbot.xacro"/>  
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find line_follow)/worlds/line.world"/>
+  </include>
+  
+
+
+    <!--Gazebo Simulator-->
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model kbot " output="screen"/>
+ 
+ <!--RViz-->
+  <node name="rviz" pkg="rviz" type="rviz" required="true"/>
+</launch>
