@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+  <master auto="start"/>
+
+
+ <include file="$(find kbot_description)/launch/kbot_base_rviz_gazebo.launch">
+ </include>
+
+  <arg name="map_file" value="/home/navid/personal_projects/mobile_robo_ws/src/navigation/maps/map.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" respawn="true"/> 
+ 
+
+  <!-- Localization -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="use_sim-time" value="true"/>
+    
+    <remap from="scan" to="/kbot/sensor_laser/scan"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="update_min_d" value="0.1"/>
+    <param name="update_min_a" value="0.2"/>
+    <param name="min_particles" value="500"/>
+
+
+
+  </node>
+
+  <!-- Move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find navigation)/config/amcl_param.yaml" command="load"/>
+    <rosparam file="$(find navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation)/config/trajectory_planner.yaml" command="load" />
+    <rosparam file="$(find navigation)/config/move_base_param.yaml" command="load"/>
+    <!-- <rosparam file="$(find navigation)/config/exploration.yaml" command="load"/> -->
+
+    <remap from="cmd_vel" to="/kbot/base_controller/cmd_vel"/>
+    <remap from="odom" to="/kbot/base_controller/odom"/>
+    <remap from="scan" to="/kbot/sensor_laser/scan"/>
+    <!-- <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="5"/>
+    <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="5"/> -->
+
+  </node>
+</launch>

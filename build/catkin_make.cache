@@ -1,0 +1,2 @@
+darknet_ros/darknet_ros:darknet_ros/darknet_ros_msgs:gui:kbot_description:kbot_simple_control:line_follow:navigation:rviz_camera_stream:yolo_package
+-DCATKIN_DEVEL_PREFIX=/home/navid/personal_projects/mobile_robo_ws/devel -DCMAKE_INSTALL_PREFIX=/home/navid/personal_projects/mobile_robo_ws/install -G Unix Makefiles

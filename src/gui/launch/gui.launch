@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="gui" pkg="gui" type="myapp.py"  output="screen" respawn="false" respawn_delay="0">
+        <remap from="gui_cmd" to="/kbot/base_controller/cmd_vel"/>
+        
+    </node>
+
+</launch>

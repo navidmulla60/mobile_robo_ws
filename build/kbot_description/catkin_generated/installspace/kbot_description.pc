@@ -1,0 +1,8 @@
+prefix=/home/navid/personal_projects/mobile_robo_ws/install
+
+Name: kbot_description
+Description: Description of kbot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

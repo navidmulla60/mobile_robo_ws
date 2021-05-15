@@ -1,0 +1,26 @@
+local_costmap:
+  update_frequency: 20
+  publish_frequency: 20
+  transform_tolerance: 1
+  # static_map: false
+  rolling_window: true
+  width: 6
+  height: 6
+  # origin_x: -1.5
+  # origin_y: -1.5
+  resolution: 0.050000
+  inflation_radius: 0.1
+  inflation_layer: 0.1
+  
+  global_frame: map
+
+
+
+#   plugins: 
+#     - {name: obstacles,        type: "costmap_2d::VoxelLayer"}
+
+# obstacles:
+#     observation_sources: base_scan
+#     base_scan: {sensor_frame: sensor_laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+
