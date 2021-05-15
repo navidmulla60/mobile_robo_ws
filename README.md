@@ -1,12 +1,12 @@
 I have recenty created a repository of my work named as mobilerobot_ws
 
-    you can see in this work I have created CAD model from scratch
-    added all controller and wrote all YAML files manually
-    and finally developed navigation stack for the robot.
+   you can see in this work I have created CAD model from scratch
+   added all controller and wrote all YAML files manually
+   and finally developed navigation stack for the robot.
 
 -after that i have created line following algorithm -manually created a world with custmised line drawn on the ground floor
 
-    also i have just implemented YOLO object recognition ( i have followed a youtube tutorial to do this... So still learning )
+   also i have just implemented YOLO object recognition ( i have followed a youtube tutorial to do this... So still learning )
 
 
 clone the repository and build the workspace....
@@ -23,26 +23,36 @@ there will be 8 packages...
 
 to visualise robot in rviz and in gazebo launch this file
 
-  roslaunch kbot_description_rviz_gazebo.launch (rviz launch file)
+    roslaunch kbot_description_rviz_gazebo.launch (rviz launch file)
   
 for mapping you need to lauch two launch files along with above launch file 
   -one is 
-      amcl.launch 
+  
+    roslaunch navigation amcl.launch 
   -and another is 
-      slam_gmapping.launch 
+  
+      roslaunch navigation slam_gmapping.launch 
+      
   once the mapping is done save the map and then, launch amcl and rviz launch file (dont launch slam_gmapping launch file )
   configure and give the end position.
 
 for line following robot launch this file
+
     roslaunch line_following course.launch
-    rosrun line_following controller.py   (make sure controller.py is executable.... use this command 'chmod +x controller.py')
+    rosrun line_following controller.py   
+    
+   (make sure controller.py is executable.... use this command 'chmod +x controller.py')
 
 for keyboard controlling
-  roslaunch kbot_simple_control kbot_control_teleop.launch
+
+    roslaunch kbot_simple_control kbot_control_teleop.launch
 
 for yolo
-  roslaunch yolo_package gazebo_rviz.launch
-  roslaunch yolo_package yolo_v2_tiny.launch  (add some object in gazebo and  move robot around)
+
+    roslaunch yolo_package gazebo_rviz.launch
+    roslaunch yolo_package yolo_v2_tiny.launch  
+   (add some object in gazebo and  move robot around)
 
 for gui
-  roslaunch gui gui.launch
+
+    roslaunch gui gui.launch
