@@ -13,12 +13,19 @@ clone the repository and build the workspace....
 
 there will be 8 packages... 
 -Kbot_description contains all discription of robot
+
 -kbot_simple_control use to control robot with keyboard
+
 -navigation used for mapping and navigate robot arond the map
+
 -line_follow used to make robot to follow line
+
 -rviz_camera_stream is used visualization in GUI app (work in progress)
+
 -gui package used to control the robot using user interface app
+
 -darknet is default repository used for object recognition
+
 -yolo_package, in this roslanch and other world file created in order to test darknet package mentioned above.
 
 to visualise robot in rviz and in gazebo launch this file
