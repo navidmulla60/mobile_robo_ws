@@ -53,6 +53,8 @@ for line following robot launch this file
 
 for keyboard controlling
 
+    roslaunch kbot_description kbot_base_rviz_gazebo.launch
+
     roslaunch kbot_simple_control kbot_control_teleop.launch
 
 for yolo
