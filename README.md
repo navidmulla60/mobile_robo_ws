@@ -47,7 +47,7 @@ for mapping you need to this launch file
 for line following robot launch this file
 
     roslaunch line_follow course.launch
-    rosrun line_following controller.py   
+    rosrun line_follow controller.py   
     
    (make sure controller.py is executable.... use this command 'chmod +x controller.py')
 
