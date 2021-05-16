@@ -31,7 +31,7 @@ there will be 8 packages...
 
 to visualise robot in rviz and in gazebo launch this file
 
-    roslaunch kbot_description_rviz_gazebo.launch (rviz launch file)
+    roslaunch kbot_description kbot_base_rviz_gazebo.launch (rviz launch file)
   
 for mapping you need to lauch two launch files along with above launch file 
   -one is 
