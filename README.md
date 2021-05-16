@@ -34,9 +34,9 @@ to visualise robot in rviz and in gazebo launch this file
     roslaunch kbot_description kbot_base_rviz_gazebo.launch (rviz launch file)
   
 for mapping you need to this launch file 
-  -one is 
   
     roslaunch navigation amcl.launch 
+    
   -and another is 
   
       roslaunch navigation slam_gmapping.launch 
@@ -47,6 +47,7 @@ for mapping you need to this launch file
 for line following robot launch this file
 
     roslaunch line_follow course.launch
+    
     rosrun line_follow controller.py   
     
    (make sure controller.py is executable.... use this command 'chmod +x controller.py')
@@ -60,9 +61,13 @@ for keyboard controlling
 for yolo
 
     roslaunch yolo_package gazebo_rviz.launch
+    
     roslaunch yolo_package yolo_v2_tiny.launch  
+    
    (add some object in gazebo and  move robot around)
 
 for gui
+
+    roslaunch kbot_description kbot_base_rviz_gazebo.launch
 
     roslaunch gui gui.launch
