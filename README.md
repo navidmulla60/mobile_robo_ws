@@ -66,7 +66,7 @@ for yolo
     
    (add some object in gazebo and  move robot around)
 
-for gui
+for gui  (NOTE:At start, Before using arrow keys, slide the slider then press buttons)
 
     roslaunch kbot_description kbot_base_rviz_gazebo.launch
 
