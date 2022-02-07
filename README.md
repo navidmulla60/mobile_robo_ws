@@ -35,7 +35,7 @@ to visualise robot in rviz and in gazebo launch this file
   
 for mapping you need to this launch file 
   
-    roslaunch navigation amcl.launch 
+    roslaunch kbot_simple_control kbot_control_teleop.launch
     
   -and another is 
   
